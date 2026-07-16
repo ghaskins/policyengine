@@ -1,0 +1,38 @@
+{
+  "anchor_refs": {},
+  "merkle_proof": {
+    "audit_path": [],
+    "leaf_index": 0
+  },
+  "meta": {
+    "bundle_kind": "record",
+    "schema_version": "1.0",
+    "type": "manetu-audit-verification-bundle"
+  },
+  "record": {
+    "integrity": {
+      "key_id": "test-key",
+      "leaf_hash_b64": "f_oEB6hNs82ocd4CRwfMhxyI1hZpIFEerExDn4jyHB0",
+      "sig_alg": "Ed25519",
+      "signature_b64": "eXvx8tLc7cgeBGDoH5I5hFBEjxwFDBlOBMSKewhOGMbLRBedSfU4zPEL8N14KdiPazWQ6jvIDOpR85UkduK4Bw"
+    },
+    "record_pb_b64": "dGFtcGVyZWQtcmVjb3JkLWJ5dGVzISE"
+  },
+  "signed_root": {
+    "covered_range": {
+      "from_seq": 0,
+      "to_seq": 0
+    },
+    "partition": 0,
+    "prev_root_hash_b64": null,
+    "prev_root_id": null,
+    "retention_policy": {
+      "mode": "retain-all"
+    },
+    "root_hash_b64": "TGCVSOiQW5rjOEwOpkugPph_YgLQ5Gb-XhMMof-_yeY",
+    "root_key_id": "test-key",
+    "root_signature_b64": "Bqjy-HSfwgX8yNKgH2Sry8k5ORROeirJlonvxyRaU8U5qzJhapJkIotPe-sG8rSy7EdXe-V8G7Q5kQBKZW-BCQ",
+    "timestamp_ms": 1700000000000,
+    "tree_size": 1
+  }
+}

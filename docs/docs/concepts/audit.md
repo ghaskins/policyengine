@@ -122,6 +122,28 @@ The Premium PolicyEngine integrates directly with ElasticSearch, providing:
 - **Built-in analytics**: Pre-configured dashboards for access patterns
 - **Alerting**: Configure alerts for anomalous patterns
 
+## Tamper-Evidence & Verification <FeatureChip variant="premium" />
+
+Building on the ElasticSearch integration above, the Premium Edition can additionally notarize the
+audit trail: batches of AccessRecords are sealed into signed Merkle batch roots and anchored to an
+external, tamper-evident store (immudb or S3/MinIO — a deployment configures exactly one). This
+turns "the log says X" into a claim a third party can independently check, without trusting the
+deployment itself.
+
+Two checks cover the two halves of that story:
+
+- **Per-record integrity, offline** — fetch a self-contained **verification bundle** for a record
+  (or a set of records) and check it entirely offline, with `mpe verify record`. See the
+  [Verification Bundle Schema](/reference/verification-bundle-schema) for the bundle format and
+  algorithm.
+- **Completeness, online** — a static bundle can prove a record wasn't *modified*, but not that
+  a record wasn't silently *deleted* from outside its own contents. `mpe verify completeness` dials
+  the anchor backend and a live deployment directly to prove that negative across a time window.
+
+Both commands ship in the Community `mpe` CLI at no cost; what's Premium is the notary that
+produces the artifacts they verify (batch sealing, signing, and anchoring). See the
+[`mpe verify` CLI reference](/reference/cli/verify) for full usage.
+
 ## Use Cases
 
 ### Compliance Reporting
@@ -356,3 +378,5 @@ For the complete AccessRecord schema including all fields, types, and enumeratio
 - **[Policy Conjunction](/concepts/policy-conjunction)**: The phases recorded in AccessRecords
 - **[Policies](/concepts/policies)**: The policies referenced in AccessRecords
 - **[Reading Access Records](/guides/reading-access-records)**: Step-by-step guide to interpreting AccessRecord output
+- **[mpe verify CLI Reference](/reference/cli/verify)**: Offline bundle verification and online completeness scanning
+- **[Verification Bundle Schema](/reference/verification-bundle-schema)**: The bundle format `mpe verify record` checks

@@ -25,6 +25,7 @@ See [Installing the CLI](/getting-started/installation#installing-the-cli) withi
 | <IconText icon="lint">[`lint`](/reference/cli/lint)</IconText> | Validate YAML and lint Rego code |
 | <IconText icon="test">[`test`](/reference/cli/test)</IconText> | Test policy decisions and mappers |
 | <IconText icon="serve">[`serve`](/reference/cli/serve)</IconText> | Run a policy decision point server |
+| <IconText icon="security">[`verify`](/reference/cli/verify)</IconText> | Verify audit tamper-evidence: per-record (offline) or completeness (online, anchor-authoritative) |
 | <IconText icon="version">[`version`](/reference/cli/version)</IconText> | Print the version of mpe |
 
 ## Quick Examples
@@ -51,6 +52,12 @@ mpe test decision -b my-domain.yml -i input.json
 
 ```bash
 mpe serve -b my-domain.yml --port 9000
+```
+
+### Verify an Audit Bundle
+
+```bash
+mpe verify record -k notary-public-key.pem -b bundle.json
 ```
 
 ## Environment Variables

@@ -97,6 +97,7 @@ const sidebars: SidebarsConfig = {
             'reference/cli/lint',
             'reference/cli/test',
             'reference/cli/serve',
+            'reference/cli/verify',
             'reference/cli/version',
           ],
         },
@@ -118,6 +119,7 @@ const sidebars: SidebarsConfig = {
         },
         'reference/configuration',
         'reference/access-record',
+        'reference/verification-bundle-schema',
       ],
     },
     {

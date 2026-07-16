@@ -39,6 +39,7 @@ The Manetu PolicyEngine is available in two editions:
 | <TableSection><IconText icon="terminal">**Developer Tooling**</IconText></TableSection>           |                                                       |                                                    |
 | CLI for build, lint, and test                                                                     |            <FeatureCheck variant="yes" />             |           <FeatureCheck variant="yes" />           |
 | Local development server (`mpe serve`)                                                            |            <FeatureCheck variant="yes" />             |           <FeatureCheck variant="yes" />           |
+| Offline audit tamper-evidence verification (`mpe verify`)                                          |            <FeatureCheck variant="yes" />             |           <FeatureCheck variant="yes" />           |
 | <TableSection><IconText icon="extension">**Integration**</IconText></TableSection>                |                                                       |                                                    |
 | Embeddable Go library                                                                             |            <FeatureCheck variant="yes" />             |           <FeatureCheck variant="no" />            |
 | HTTP decision service                                                                             |            <FeatureCheck variant="yes" />             |           <FeatureCheck variant="yes" />           |
@@ -53,6 +54,7 @@ The Manetu PolicyEngine is available in two editions:
 | Kubernetes Operator with auto-scaling sidecars                                                    |             <FeatureCheck variant="no" />             |           <FeatureCheck variant="yes" />           |
 | Centralized policy administration                                                                 |             <FeatureCheck variant="no" />             |           <FeatureCheck variant="yes" />           |
 | ElasticSearch integration for audit storage, indexing, and reporting                              |             <FeatureCheck variant="no" />             |           <FeatureCheck variant="yes" />           |
+| Tamper-evident audit notarization (signed batch roots, external anchoring)                         |             <FeatureCheck variant="no" />             |           <FeatureCheck variant="yes" />           |
 | Queryable Audit History                                                                           |             <FeatureCheck variant="no" />             |           <FeatureCheck variant="yes" />           |
 | Analytics Dashboards                                                                              |             <FeatureCheck variant="no" />             |           <FeatureCheck variant="yes" />           |
 | Streaming Live Audit                                                                              |             <FeatureCheck variant="no" />             |           <FeatureCheck variant="yes" />           |
@@ -110,6 +112,7 @@ The `mpe` CLI provides comprehensive tooling for the policy development lifecycl
 - <IconText icon="lint">**`mpe lint`**</IconText>: Validate YAML syntax and lint embedded Rego code
 - <IconText icon="test">**`mpe test`**</IconText>: Test policy decisions with various inputs
 - <IconText icon="serve">**`mpe serve`**</IconText>: Run a local policy decision point for development
+- <IconText icon="security">**`mpe verify`**</IconText>: Offline-verify audit tamper-evidence, or run an online completeness scan against a live deployment
 
 Advanced debugging capabilities include `--trace` mode for line-by-line policy evaluation tracing. The Premium Edition adds decision replay with visual code coverage, benchmarking, and historical analysis.
 

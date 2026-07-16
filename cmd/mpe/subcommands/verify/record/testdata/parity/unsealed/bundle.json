@@ -1,0 +1,32 @@
+{
+  "anchor_refs": {},
+  "merkle_proof": {
+    "audit_path": [],
+    "leaf_index": 0
+  },
+  "meta": {
+    "bundle_kind": "record",
+    "schema_version": "1.0",
+    "type": "manetu-audit-verification-bundle"
+  },
+  "record": {
+    "record_pb_b64": "cHJlLWVuYWJsZW1lbnQtcmVjb3Jk"
+  },
+  "signed_root": {
+    "covered_range": {
+      "from_seq": 0,
+      "to_seq": 0
+    },
+    "partition": 0,
+    "prev_root_hash_b64": null,
+    "prev_root_id": null,
+    "retention_policy": {
+      "mode": "retain-all"
+    },
+    "root_hash_b64": "0yPEBpOWL2M6GMz7NfiPVRQm46Jk4Bu69C8zlFyTsso",
+    "root_key_id": "test-key",
+    "root_signature_b64": "eA_BJP7w-LaUaW9cUI0BYrj2tWczG_PzXqvSB4pOuMiNgZLIMQLjdnLRyoaNpAEf52R2WoUGhZXPUkQA0IMmDA",
+    "timestamp_ms": 1700000000000,
+    "tree_size": 1
+  }
+}

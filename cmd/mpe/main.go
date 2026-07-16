@@ -14,6 +14,8 @@ import (
 	"github.com/manetu/policyengine/cmd/mpe/subcommands/lint"
 	"github.com/manetu/policyengine/cmd/mpe/subcommands/serve"
 	"github.com/manetu/policyengine/cmd/mpe/subcommands/test"
+	"github.com/manetu/policyengine/cmd/mpe/subcommands/verify/completeness"
+	"github.com/manetu/policyengine/cmd/mpe/subcommands/verify/record"
 	"github.com/manetu/policyengine/cmd/mpe/version"
 	"github.com/manetu/policyengine/internal/logging"
 	"github.com/urfave/cli/v3"
@@ -236,6 +238,26 @@ func main() {
 					},
 				},
 				Action: build.Execute,
+			},
+			{
+				Name:  "verify",
+				Usage: "Verifies Manetu audit tamper-evidence: per-record (offline) or completeness (online, anchor-authoritative)",
+				Commands: []*cli.Command{
+					{
+						Name:        "record",
+						Usage:       "Offline-verifies a Manetu audit verification bundle against out-of-band trust roots",
+						Description: record.Usage(),
+						Flags:       record.Flags,
+						Action:      record.Execute,
+					},
+					{
+						Name:        "completeness",
+						Usage:       "Runs the online, anchor-authoritative completeness scan across a notary_ts window",
+						Description: completeness.Usage(),
+						Flags:       completeness.Flags,
+						Action:      completeness.Execute,
+					},
+				},
 			},
 			{
 				Name:  "version",
